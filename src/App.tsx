@@ -90,7 +90,7 @@ const GlobalStyles = () => (
       .hero__description {
         color: #000;
         font-size: 18px;
-        font-weight: 200;
+        font-weight: 400;
         line-height: 1.2;
         margin-bottom: 60px;
         
@@ -172,7 +172,7 @@ const GlobalStyles = () => (
         display: inline-block;
         background: #F66297;
         color: #fff;
-        padding: 10px 22px;
+        padding: 15px 22px;
         border-radius: 100px;
         font-size: 16px;
         font-weight: 600;
@@ -326,7 +326,7 @@ const Hero = () => (
             Похудеть, подтянуть попу и живот, набрать форму в зале,
             восстановиться после родов — тренировки и питание под вашу цель.
           </p>
-          <button className="marathon-card__btn">Выбрать программу</button>
+          <button className="marathon-card__btn" style={{ padding: '35px 60px' }}>Выбрать программу</button>
         </div>
         <img src="/HeroImg.png" alt="Катя Усманова" className="hero__img" />
       </div>
