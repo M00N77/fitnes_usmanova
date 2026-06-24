@@ -172,7 +172,7 @@ const GlobalStyles = () => (
         display: inline-block;
         background: #F66297;
         color: #fff;
-        padding: 15px 22px;
+        padding: 10px 22px;
         border-radius: 100px;
         font-size: 16px;
         font-weight: 600;
@@ -180,6 +180,7 @@ const GlobalStyles = () => (
         cursor: pointer;
         width: fit-content;
         font-family: inherit;
+        text-decoration: none;
         transition: opacity 0.2s;
       }
 
@@ -283,9 +284,12 @@ interface MarathonCardProps {
   description: string
   buttonText?: string
   image?: string
+  link?: string
 }
 
-const MarathonCard = ({ badge, title, description, buttonText = 'Подробнее', image }: MarathonCardProps) => {
+const DETAIL_LINK = 'https://usmanovafit.gymteam.ru/kdz_june?utm_source=main&utm_medium=usmanovafit&utm_campaign=kdz_june'
+
+const MarathonCard = ({ badge, title, description, buttonText = 'Подробнее', image, link = DETAIL_LINK }: MarathonCardProps) => {
   const isAccent = badge === 'Флагман' || badge === 'Бестселлер'
 
   return (
@@ -299,7 +303,7 @@ const MarathonCard = ({ badge, title, description, buttonText = 'Подробн�
         )}
         <h3 className="marathon-card__title">{title}</h3>
         <p className="marathon-card__desc">{description}</p>
-        <button className="marathon-card__btn">{buttonText}</button>
+        <a className="marathon-card__btn" href={link}>{buttonText}</a>
       </div>
     </div>
   )
@@ -322,7 +326,7 @@ const Hero = () => (
             Похудеть, подтянуть попу и живот, набрать форму в зале,
             восстановиться после родов — тренировки и питание под вашу цель.
           </p>
-          <button className="marathon-card__btn" style={{ padding: '35px 60px' }}>Выбрать программу</button>
+          <a className="marathon-card__btn" style={{ padding: '35px 60px' }} href="#tariffs">Выбрать программу</a>
         </div>
         <img src="/HeroImg.png" alt="Катя Усманова" className="hero__img" />
       </div>
