@@ -73,24 +73,24 @@ const GlobalStyles = () => (
         color: #F66297;
         font-size: 36px;
         font-weight: 600;
-        line-height: 1.15;
-        margin-bottom: 12px;
+        line-height: 1.2;
+        margin-bottom: 15px;
       }
 
       .hero__subtitle {
         color: #F66297;
-        font-weight: 500;
         font-size: 26px;
-        line-height: 1.3;
-        margin-bottom: 12px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 60px;
       }
 
       .hero__description {
         color: #000;
-        font-weight: 500;
         font-size: 18px;
-        line-height: 1.6;
-        margin-bottom: 32px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 60px;
       }
 
 
