@@ -359,7 +359,7 @@ const About = () => (
 
       <div className="about__gallery">
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="about__gallery-item" />
+          <div key={i} className="about__gallery-item" style={{ backgroundImage: `url(/result${(i % 2) + 1}.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         ))}
       </div>
       <p style={{ marginTop: 10, fontSize: 13, color: '#6b6b6b' }}>Листайте вправо →</p>
