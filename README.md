@@ -1,32 +1,45 @@
-# React + TypeScript + Vite
+# Лендинг Кати Усмановой — Фитнес-тренировки
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Тестовое задание: повторение 3+ экранов референсного лендинга `usmanovafit.gymteam.ru/mainpage`.
 
-Currently, two official plugins are available:
+## Инструмент
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Собрано вручную в **Cline / VS Code** на **React 18 + Vite + TypeScript**.
 
-## React Compiler
+## Время
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+~4–5 часов.
 
-## Expanding the Oxlint configuration
+## Что сделано
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Hero** — grid 2 колонки (текст + фото), pink accent `#F66297`, uppercase заголовок, italic подзаголовок
+- **About** — карточка с достижениями, список с розовыми иконками-кружками, галерея изображений (горизонтальный скролл)
+- **Программы** — единый переиспользуемый компонент `MarathonCard`:
+  - Флагман / Бестселлер — розовая обводка + badge с фоном
+  - Марафон / Курс — только розовый текст без рамки
+  - Кнопка с `border-radius: 100px`
+  - Фото — `background-image` на левой половине карточки (absolute)
+- **Питание** — 2 карточки (ИИ-нутрициолог, Курс)
+- **Беременность и после родов** — 2 карточки
+- **Адаптив** (768px) — карточки схлопываются, фото 50% width, текст `margin-left: 50%`
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Файловая структура
+
+```
+src/
+  App.tsx        — все компоненты + стили в одном файле
+  index.css      — минимальный сброс
+  main.tsx       — точка входа
+public/
+  HeroImg.png
+  result1.png, result2.png
+  trainings/train{1,2,3}.png
+  icons/dumbbell/*.svg
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Запуск
+
+```bash
+npm install
+npm run dev
+```
