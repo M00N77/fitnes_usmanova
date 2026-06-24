@@ -394,7 +394,7 @@ const GymPrograms = () => (
         badge="Курс"
         title="Для зала"
         description="Мышцы снова растут, когда дома прогресс уже остановился. Готовая программа на мышечный объём."
-        image="/result1.png"
+        image="/trainings/train1.png"
       />
     </div>
   </section>
@@ -431,14 +431,14 @@ const Nutrition = () => (
         badge="Бестселлер"
         title="ИИ-нутрициолог"
         description="Едите без срывов и понимаете своё тело. Питание, тренировки и анализы в одном месте."
-        image="/result1.png"
+        image="/trainings/train1.png"
       />
 
       <MarathonCard
         badge="Курс"
         title="По питанию"
         description="Сбросить вес без диет и жёстких ограничений."
-        image="/result2.png"
+        image="/trainings/train2.png"
       />
     </div>
   </section>
