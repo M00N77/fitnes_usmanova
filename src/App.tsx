@@ -200,9 +200,15 @@ const GlobalStyles = () => (
       .about__icon {
         width: 30px;
         height: 30px;
-        background: #d9d9d9;
         border-radius: 8px;
         flex-shrink: 0;
+      }
+
+      .hero__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
       }
 
       .about__gallery {
@@ -313,7 +319,7 @@ const Hero = () => (
           </p>
           <button className="marathon-card__btn">Выбрать программу</button>
         </div>
-        <Placeholder height={560} radius={24} />
+        <img src="/HeroImg.png" alt="Катя Усманова" className="hero__img" />
       </div>
     </div>
   </section>
@@ -336,15 +342,15 @@ const About = () => (
       <div className="about__card">
         <ul className="about__list">
           {[
-            'Вице-чемпионка мира и чемпионка России по фитнес-бикини',
-            'Профессиональный фитнес-тренер с опытом более 15 лет',
-            'Мама двоих детей',
-            'Автор масштабных марафонов стройности',
-            'Чемпионка России по жиму лёжа',
+            { text: 'Вице-чемпионка мира и чемпионка России по фитнес-бикини', icon: '/icons/dumbbell/medal.svg' },
+            { text: 'Профессиональный фитнес-тренер с опытом более 15 лет', icon: '/icons/dumbbell/trainer.svg' },
+            { text: 'Мама двоих детей', icon: '/icons/dumbbell/mother.svg' },
+            { text: 'Автор масштабных марафонов стройности', icon: '/icons/dumbbell/marathon.svg' },
+            { text: 'Чемпионка России по жиму лёжа', icon: '/icons/dumbbell/bench-press.svg' },
           ].map((item) => (
-            <li key={item} className="about__list-item">
-              <span className="about__icon" />
-              <span>{item}</span>
+            <li key={item.text} className="about__list-item">
+              <img src={item.icon} alt="" className="about__icon" />
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
