@@ -4,7 +4,11 @@
 
 **Деплой:** [fitnes-usmanova-yrkg.vercel.app](https://fitnes-usmanova-yrkg.vercel.app/)
 
-**Скриншоты:** `public/demo/1.png`, `2.png`, `3.png`
+**Скриншоты:**
+
+![Скриншот 1](https://raw.githubusercontent.com/M00N77/fitnes_usmanova/main/public/demo/1.png)
+![Скриншот 2](https://raw.githubusercontent.com/M00N77/fitnes_usmanova/main/public/demo/2.png)
+![Скриншот 3](https://raw.githubusercontent.com/M00N77/fitnes_usmanova/main/public/demo/3.png)
 
 ## Инструмент
 
