@@ -379,7 +379,7 @@ const HomePrograms = () => (
         { badge: 'Марафон', title: 'Упругая попа 2.0', description: 'Продолжение. Повышенная нагрузка, усложнённые связки и работа над рельефом.' },
         { badge: 'Марафон', title: 'Плоский живот', description: 'Комплекс на глубокие мышцы кора. Результат виден уже через 4 недели регулярных занятий.' },
       ].map((p, i) => (
-        <MarathonCard key={p.title} {...p} image={`/result${(i % 2) + 1}.png`} />
+        <MarathonCard key={p.title} {...p} image={`/trainings/train${(i % 3) + 1}.png`} />
       ))}
     </div>
   </section>
