@@ -115,8 +115,9 @@ const GlobalStyles = () => (
         bottom: 0;
         height: 100%;
         width: 50%;
-        object-fit: cover;
-        background: #d9d9d9;
+        background-color: #d9d9d9;
+        background-size: cover;
+        background-position: center;
       }
 
       .marathon-card__body {
@@ -280,12 +281,12 @@ const Placeholder = ({ width, height, radius = 12, className = '' }) => (
   />
 )
 
-const MarathonCard = ({ badge, title, description, buttonText = 'Подробнее' }) => {
+const MarathonCard = ({ badge, title, description, buttonText = 'Подробнее', image }) => {
   const isAccent = badge === 'Флагман' || badge === 'Бестселлер'
 
   return (
     <div className={`marathon-card${isAccent ? ' marathon-card--accent' : ''}`}>
-      <div className="marathon-card__image" />
+      <div className="marathon-card__image" style={image ? { backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}} />
       <div className="marathon-card__body">
         {badge && (
           isAccent
@@ -342,11 +343,11 @@ const About = () => (
       <div className="about__card">
         <ul className="about__list">
           {[
-            { text: 'Вице-чемпионка мира и чемпионка России по фитнес-бикини', icon: '/icons/dumbbell/medal.svg' },
-            { text: 'Профессиональный фитнес-тренер с опытом более 15 лет', icon: '/icons/dumbbell/trainer.svg' },
-            { text: 'Мама двоих детей', icon: '/icons/dumbbell/mother.svg' },
-            { text: 'Автор масштабных марафонов стройности', icon: '/icons/dumbbell/marathon.svg' },
-            { text: 'Чемпионка России по жиму лёжа', icon: '/icons/dumbbell/bench-press.svg' },
+            { text: 'Вице-чемпионка мира и чемпионка России по фитнес-бикини', icon: '/icons/dumbbell.png' },
+            { text: 'Профессиональный фитнес-тренер с опытом более 15 лет', icon: '/icons/dumbbell.png' },
+            { text: 'Мама двоих детей', icon: '/icons/dumbbell.png' },
+            { text: 'Автор масштабных марафонов стройности', icon: '/icons/dumbbell.png' },
+            { text: 'Чемпионка России по жиму лёжа', icon: '/icons/dumbbell.png' },
           ].map((item) => (
             <li key={item.text} className="about__list-item">
               <img src={item.icon} alt="" className="about__icon" />
@@ -371,35 +372,15 @@ const HomePrograms = () => (
     <div className="container">
       <h2 className="section-title">Тренировки дома</h2>
 
-      <MarathonCard
-        badge="Флагман"
-        title="Метод Усмановой"
-        description="Системный подход к телу: тренировки, питание и режим в одной программе. Для тех, кто хочет устойчивый результат."
-      />
-
-      <MarathonCard
-        badge="Марафон"
-        title="Стройности"
-        description="Интенсивный курс для снижения веса и формирования привычки к активному образу жизни."
-      />
-
-      <MarathonCard
-        badge="Марафон"
-        title="Упругая попа 1.0"
-        description="Начальный уровень. Прокачай ягодицы с нуля — без оборудования, дома, в своём ритме."
-      />
-
-      <MarathonCard
-        badge="Марафон"
-        title="Упругая попа 2.0"
-        description="Продолжение. Повышенная нагрузка, усложнённые связки и работа над рельефом."
-      />
-
-      <MarathonCard
-        badge="Марафон"
-        title="Плоский живот"
-        description="Комплекс на глубокие мышцы кора. Результат виден уже через 4 недели регулярных занятий."
-      />
+      {[
+        { badge: 'Флагман', title: 'Метод Усмановой', description: 'Системный подход к телу: тренировки, питание и режим в одной программе. Для тех, кто хочет устойчивый результат.' },
+        { badge: 'Марафон', title: 'Стройности', description: 'Интенсивный курс для снижения веса и формирования привычки к активному образу жизни.' },
+        { badge: 'Марафон', title: 'Упругая попа 1.0', description: 'Начальный уровень. Прокачай ягодицы с нуля — без оборудования, дома, в своём ритме.' },
+        { badge: 'Марафон', title: 'Упругая попа 2.0', description: 'Продолжение. Повышенная нагрузка, усложнённые связки и работа над рельефом.' },
+        { badge: 'Марафон', title: 'Плоский живот', description: 'Комплекс на глубокие мышцы кора. Результат виден уже через 4 недели регулярных занятий.' },
+      ].map((p, i) => (
+        <MarathonCard key={p.title} {...p} image={`/result${(i % 2) + 1}.png`} />
+      ))}
     </div>
   </section>
 )
@@ -413,6 +394,7 @@ const GymPrograms = () => (
         badge="Курс"
         title="Для зала"
         description="Мышцы снова растут, когда дома прогресс уже остановился. Готовая программа на мышечный объём."
+        image="/result1.png"
       />
     </div>
   </section>
@@ -427,12 +409,14 @@ const Maternity = () => (
         badge="Курс"
         title="Для беременных"
         description="Лёгкие роды и тело без перегрузки. Безопасные тренировки на всех триместрах."
+        image="/result1.png"
       />
 
       <MarathonCard
         badge="Курс"
         title="Восстановление после родов"
         description="Вернитесь в форму после родов и кесарева."
+        image="/result2.png"
       />
     </div>
   </section>
@@ -447,12 +431,14 @@ const Nutrition = () => (
         badge="Бестселлер"
         title="ИИ-нутрициолог"
         description="Едите без срывов и понимаете своё тело. Питание, тренировки и анализы в одном месте."
+        image="/result1.png"
       />
 
       <MarathonCard
         badge="Курс"
         title="По питанию"
         description="Сбросить вес без диет и жёстких ограничений."
+        image="/result2.png"
       />
     </div>
   </section>
