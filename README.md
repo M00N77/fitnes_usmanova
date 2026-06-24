@@ -2,6 +2,10 @@
 
 Тестовое задание: повторение 3+ экранов референсного лендинга [usmanovafit.gymteam.ru/mainpage](https://usmanovafit.gymteam.ru/mainpage).
 
+**Деплой:** [fitnes-usmanova-yrkg.vercel.app](https://fitnes-usmanova-yrkg.vercel.app/)
+
+**Скриншоты:** `public/demo/1.png`, `2.png`, `3.png`
+
 ## Инструмент
 
 Собрано вручную в **Cline / VS Code** на **React 18 + Vite**.
@@ -75,5 +79,5 @@ npm run dev
 
 - React 18
 - Vite
-- JSX (без TypeScript)
+- TypeScript
 - CSS-in-JS через `<style>` тег в GlobalStyles компоненте
