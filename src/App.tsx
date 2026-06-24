@@ -70,6 +70,7 @@ const GlobalStyles = () => (
       }
 
       .hero__title {
+        text-transform: uppercase;
         color: #F66297;
         font-size: 36px;
         font-weight: 600;
@@ -83,14 +84,16 @@ const GlobalStyles = () => (
         font-weight: 500;
         line-height: 1.2;
         margin-bottom: 60px;
+        font-style: italic;
       }
 
       .hero__description {
         color: #000;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 200;
         line-height: 1.2;
         margin-bottom: 60px;
+        
       }
 
 
@@ -139,6 +142,8 @@ const GlobalStyles = () => (
         font-weight: 600;
         margin-bottom: 10px;
         width: fit-content;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
       }
 
       .marathon-card__tag {
@@ -196,12 +201,15 @@ const GlobalStyles = () => (
         font-size: 16px;
         font-weight: 500;
         line-height: 1.4;
+        color: #F66297;
       }
 
       .about__icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 8px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #F66297;
+        margin-top: 5px;
         flex-shrink: 0;
       }
 
@@ -311,7 +319,7 @@ const Hero = () => (
             с чемпионкой Катей Усмановой
           </h1>
           <p className="hero__subtitle">
-            Без диет, голода и запретов<br />
+            без диет, голода и запретов<br />
             с пользой для здоровья
           </p>
           <p className="hero__description">
