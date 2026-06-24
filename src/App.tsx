@@ -277,19 +277,15 @@ const GlobalStyles = () => (
   </style>
 )
 
-const Placeholder = ({ width, height, radius = 12, className = '' }) => (
-  <div
-    className={className}
-    style={{
-      width: width || '100%',
-      height: height || 200,
-      background: '#d9d9d9',
-      borderRadius: radius,
-    }}
-  />
-)
+interface MarathonCardProps {
+  badge: string
+  title: string
+  description: string
+  buttonText?: string
+  image?: string
+}
 
-const MarathonCard = ({ badge, title, description, buttonText = 'Подробнее', image }) => {
+const MarathonCard = ({ badge, title, description, buttonText = 'Подробнее', image }: MarathonCardProps) => {
   const isAccent = badge === 'Флагман' || badge === 'Бестселлер'
 
   return (
